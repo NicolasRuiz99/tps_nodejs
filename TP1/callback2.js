@@ -33,12 +33,14 @@ let getEmpleado = (id, callback) => {
     }
 }
 
-getEmpleado(2, (err, empleado) => {
+getEmpleado(3, (err, empleado) => {
     if (err) {
         return console.log(err);
     }
     console.log(empleado);
 });
+
+//Obtenemos el salario
 
 let getSalario = (id, callback) => {
 
@@ -50,7 +52,7 @@ let getSalario = (id, callback) => {
     }
 }
 
-getSalario(1, (err, salario) => {
+getSalario(2, (err, salario) => {
     if (err) {
         return console.log(err);
     }
