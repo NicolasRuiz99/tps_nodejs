@@ -34,21 +34,21 @@ let getEmpleado = (id) => {
 
 let getSalario = (id) => {
     return new Promise((resolve, reject) => {
-        let empleadoDB = empleados.find(empleado => empleado.id == id)
-
-        if (!empleadoDB) {
-            reject(`No existe el empleado con el ID ${ id }`)
-        } else {
-            let salarioDB = salarios.find(salario => salario.id == id)
-            if (!salarioDB) {
-                reject(`No existe un salario para ${ empleadoDB.nombre }`)
-            } else {
-                resolve({
-                    nombre: empleadoDB.nombre,
-                    salario: salarioDB.salario
-                })
-            }
-        }
+        getEmpleado(id)
+            .then(empleado => {
+                let salarioDB = salarios.find(salario => salario.id == id)
+                if (!salarioDB) {
+                    reject(`No existe un salario para ${ empleado.nombre }`)
+                } else {
+                    resolve({
+                        nombre: empleado.nombre,
+                        salario: salarioDB.salario
+                    })
+                }
+            })
+            .catch(err => {
+                reject(err);
+            })
     })
 }
 
