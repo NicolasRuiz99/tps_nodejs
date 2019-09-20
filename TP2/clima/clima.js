@@ -9,7 +9,15 @@ const getClima = async(lat, lng) => {
         "&appid=5133e06ff2617085e5e05bccf763f53f&units=metric"
     );
 
-    return resp.data.main.temp;
+    const temp = resp.data.main.temp;
+    const pres = resp.data.main.pressure;
+    const hum = resp.data.main.humidity;
+
+    return {
+        temp,
+        pres,
+        hum
+    };
 };
 
 module.exports = {

@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "dir": "Cordoba Curay, Colombia",
+      "temp": 25.25,
+      "pres": 1013.09,
+      "hum": 87
+    },
+    {
+      "dir": "Colonia Mariano Roque Alonso, Paraguay",
+      "temp": 20,
+      "pres": 1009,
+      "hum": 77
+    }
+  ]
+}
