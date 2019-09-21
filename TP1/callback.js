@@ -11,6 +11,7 @@ let getUsuarioById = (id, callback) => {
     }
 }
 
+//Cuando modificamos el id (que sea distinto a 20) nos devolverá siempre el usuario con el nombre Ernesto y el id que mandemos
 getUsuarioById(1, (err, usuario) => {
     if (err) {
         return console.log(err);
