@@ -15,6 +15,12 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('#0', (req, res) => {
+    res.render("pages", {
+        active: { page: true }
+    })
+})
+
 app.get('/portfolio', (req, res) => {
     res.render("portfolio", {
         active: {
@@ -49,6 +55,58 @@ app.get('/portfolio-masonry', (req, res) => {
             portfolio_masonry: true
         }
     })
+})
+
+app.get('/contact', (req, res) => {
+    res.render("contact", {
+        active: {
+            contact: true
+        }
+    })
+})
+
+app.get('/blog', (req, res) => {
+    res.render("blog", {
+        active: {
+            blog: true
+        }
+    })
+})
+
+app.get('/about', (req, res) => {
+    res.render('about', {
+        active: {
+            page: true
+        }
+    })
+})
+
+app.get('/design-styles', (req, res) => {
+    res.render('design-styles', {
+        active: {
+            page: true
+        }
+    })
+})
+
+app.get('/documentation', (req, res) => {
+    res.render('documentation', {
+        active: {
+            page: true
+        }
+    })
+})
+
+app.get('/blog-post', (req, res) => {
+    res.render('blog-post')
+})
+
+app.get('/portfolio-hover', (req, res) => {
+    res.render('portfolio-hover')
+})
+
+app.get('/portfolio-item', (req, res) => {
+    res.render('portfolio-item')
 })
 
 app.listen(port, () => {

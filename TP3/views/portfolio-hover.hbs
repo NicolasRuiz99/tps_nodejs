@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body class="top-fixed">
+    {{> header}}
+    <section class="rk-container rk-main">
+      <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
+        <h3>Flex</h3><code>html</code>
+        <pre><code>&lt;div class=&quot;rk-portfolio__items&quot;&gt;
+   &lt;div class=&quot;rk-item rk-item--flex item-4 <ins>rk-item--hover</ins>&quot;
+      data-bg-src=&quot;origin&quot;
+      data-img-src=&quot;assets/img/project-3.jpg&quot;&gt;
+    &lt;!-- meta --&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;</code></pre><code>js</code>
+        <pre><code>var flexHover = new peHoverImg();
+flexHover.init({
+  reverse: true
+});</code></pre>
+        <div class="rk-portfolio__items">
+          <div class="rk-items-cont rk-size-6 rk-tosize-8"><a href="/portfolio-item" data-bg-src="origin" data-img-src="assets/img/project-3.jpg" class="rk-item rk-item--flex item-4 rk-size-12 rk-landscape rk-item--hover">
+              <div class="item-meta">
+                <h2>Tumblr hammock</h2>
+                <p>Packaging</p>
+              </div></a><a href="/portfolio-item" data-bg-src="origin" data-img-src="assets/img/project-11.jpg" class="rk-item rk-item--flex item-5 rk-size-12 rk-landscape rk-item--hover">
+              <div class="item-meta">
+                <h2>Biodiesel etsy</h2>
+                <p>Branding</p>
+              </div></a></div><a href="/portfolio-item" data-bg-src="origin" data-img-src="assets/img/project-2.jpg" class="rk-item rk-item--flex item-6 rk-size-6 rk-portrait rk-item--hover">
+            <div class="item-meta">
+              <h2>Gentrify artisan</h2>
+              <p>Graphic Design</p>
+            </div></a>
+        </div>
+        <h3 class="au-mt-4">Static</h3><code>html</code>
+        <pre><code>&lt;div class=&quot;ae-grid&quot;&gt;
+  &lt;div class=&quot;ae-grid__item item-lg--auto&quot;&gt;
+    &lt;div class=&quot;rk-item <ins>rk-item-static--hover</ins>&quot; data-bg-src=&quot;assets/img/project-6.jpg&quot;&gt;
+      &lt;img src=&quot;assets/img/project-3.jpg&quot; /&gt;
+      &lt;!-- meta --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;</code></pre><code>js</code>
+        <pre><code>var staticHover = new peHoverImg();
+staticHover.init({
+  elems: '<ins>.rk-item-static--hover</ins>',
+  transition: '1.3s'
+});</code></pre>
+        <div class="ae-grid">
+          <div class="ae-grid__item item-lg--auto"><a href="/portfolio-item" data-bg-src="assets/img/project-6.jpg" class="rk-item rk-item-static--hover"><img src="assets/img/project-3.jpg" alt="">
+              <div class="item-meta">
+                <h2>Waistcoat vegan</h2>
+                <p>Graphic Design</p>
+              </div></a></div>
+          <div class="ae-grid__item item-lg--auto"><a href="/portfolio-item" data-bg-src="assets/img/project-10.jpg" class="rk-item rk-item-static--hover"><img src="assets/img/project-6.jpg" alt="">
+              <div class="item-meta">
+                <h2>Gentrify artisan</h2>
+                <p>Graphic Design</p>
+              </div></a></div>
+          <div class="ae-grid__item item-lg--auto"><a href="/portfolio-item" data-bg-src="assets/img/project-3.jpg" class="rk-item rk-item-static--hover"><img src="assets/img/project-10.jpg" alt="">
+              <div class="item-meta">
+                <h2>Waistcoat ugh</h2>
+                <p>UI/UX</p>
+              </div></a></div>
+        </div>
+        <h3 class="au-mt-4">Masonry</h3><code>html</code>
+        <pre><code>&lt;div class=&quot;ae-masonry&quot;&gt;
+  &lt;div class=&quot;rk-item ae-masonry__item <ins>rk-item-masonry--hover</ins>&quot;&gt;
+    &lt;img src=&quot;assets/img/project-1.jpg&quot; /&gt;
+    &lt;!-- meta --&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;</code></pre><code>js</code>
+        <pre><code>var masonryHover = new peHoverImg();
+masonryHover.init({
+  elems: '<ins>.rk-item-masonry--hover</ins>',
+  bgSrc: 'assets/img/project-11.jpg'
+});</code></pre>
+        <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4"><a href="/portfolio-item" class="rk-item ae-masonry__item rk-item-masonry--hover"><img src="assets/img/project-1.jpg" alt="">
+            <div class="item-meta">
+              <h2>Essential Stationery</h2>
+              <p>Branding</p>
+            </div></a><a href="/portfolio-item" class="rk-item ae-masonry__item rk-item-masonry--hover"><img src="assets/img/project-2.jpg" alt="">
+            <div class="item-meta">
+              <h2>Pickled Tousled</h2>
+              <p>Art Direction</p>
+            </div></a><a href="/portfolio-item" class="rk-item ae-masonry__item rk-item-masonry--hover"><img src="assets/img/project-3.jpg" alt="">
+            <div class="item-meta">
+              <h2>Waistcoat vegan</h2>
+              <p>Graphic Design</p>
+            </div></a><a href="/portfolio-item" class="rk-item ae-masonry__item rk-item-masonry--hover"><img src="assets/img/project-4.jpg" alt="">
+            <div class="item-meta">
+              <h2>Tumblr hammock</h2>
+              <p>Packaging</p>
+            </div></a><a href="/portfolio-item" class="rk-item ae-masonry__item rk-item-masonry--hover"><img src="assets/img/project-5.jpg" alt="">
+            <div class="item-meta">
+              <h2>Biodiesel etsy</h2>
+              <p>Branding</p>
+            </div></a><a href="/portfolio-item" class="rk-item ae-masonry__item rk-item-masonry--hover"><img src="assets/img/project-6.jpg" alt="">
+            <div class="item-meta">
+              <h2>Gentrify artisan</h2>
+              <p>Graphic Design</p>
+            </div></a><a href="/portfolio-item" class="rk-item ae-masonry__item rk-item-masonry--hover"><img src="assets/img/project-7.jpg" alt="">
+            <div class="item-meta">
+              <h2>Plaid austin</h2>
+              <p>Graphic Design</p>
+            </div></a><a href="/portfolio-item" class="rk-item ae-masonry__item rk-item-masonry--hover"><img src="assets/img/project-8.jpg" alt="">
+            <div class="item-meta">
+              <h2>Trust fund</h2>
+              <p>Packaging</p>
+            </div></a><a href="/portfolio-item" class="rk-item ae-masonry__item rk-item-masonry--hover"><img src="assets/img/project-9.jpg" alt="">
+            <div class="item-meta">
+              <h2>Gentrify pork</h2>
+              <p>Branding</p>
+            </div></a>
+        </div>
+      </section>
+    </section>
+    {{> footer}}
+    <script src="assets/js/svg4everybody.min.js"></script>
+    <script>svg4everybody();</script>
+    <script src="assets/js/pe-hoverimage.js"></script>
+    <script>
+      var flexHover = new peHoverImg();
+      flexHover.init({
+        reverse: true
+      });
+
+      var staticHover = new peHoverImg();
+      staticHover.init({
+        elems: '.rk-item-static--hover',
+        transition: '1.3s'
+      });
+
+      var masonryHover = new peHoverImg();
+      masonryHover.init({
+        elems: '.rk-item-masonry--hover',
+        bgSrc: 'assets/img/project-11.jpg'
+      });
+    </script>
+  </body>
+</html>

@@ -30,20 +30,20 @@
                     </nav>
                     {{/unless}}
                 </li>
-                <li class="{{#if active.blog}} active {{/if}} rk-menu__item"><a href="blog.html" class="rk-menu__link">Blog</a>
+                <li class="{{#if active.blog}} active {{/if}} rk-menu__item"><a href="/blog" class="rk-menu__link">Blog</a>
                 </li>
                 <li class="{{#if active.page}} active {{/if}} rk-menu__item"><a href="#0" class="rk-menu__link">Pages</a>
                     <nav class="rk-menu__sub">
                         <ul class="rk-container">
-                            <li class="rk-menu__item"><a href="about.html" class="rk-menu__link">About</a></li>
-                            <li class="rk-menu__item"><a href="documentation.html"
+                            <li class="rk-menu__item"><a href="/about" class="rk-menu__link">About</a></li>
+                            <li class="rk-menu__item"><a href="/documentation"
                                     class="rk-menu__link">Documentation</a></li>
-                            <li class="rk-menu__item"><a href="design-styles.html" class="rk-menu__link">Design
+                            <li class="rk-menu__item"><a href="/design-styles" class="rk-menu__link">Design
                                     Styles</a></li>
                         </ul>
                     </nav>
                 </li>
-                <li class="rk-menu__item"><a href="contact.html" class="rk-menu__link">Contact Us</a>
+                <li class="{{#if active.contact}} active {{/if}} rk-menu__item"><a href="/contact" class="rk-menu__link">Contact Us</a>
                 </li>
             </ul>
             <form class="rk-search">
