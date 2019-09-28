@@ -15,12 +15,6 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('#0', (req, res) => {
-    res.render("pages", {
-        active: { page: true }
-    })
-})
-
 app.get('/portfolio', (req, res) => {
     res.render("portfolio", {
         active: {
