@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nuevo Ticket</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>
+                <span id="lblNuevoTicket">
+                    Cargando...
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-secondary btn-lg" onclick="agregarTicket()">
+                    Generar nuevo ticket
+                </button>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+</body>
+
+<script src="socket.io/socket.io.js"></script>
+
+<script>
+    var socket = io();
+    var cont = 0;
+
+    function agregarTicket() {
+        cont++;
+        document.getElementById("lblNuevoTicket").innerHTML = "Ticket " + cont;
+        socket.emit('cargarTicket', cont)
+    }
+
+    // escuchar 
+    socket.on('connect', function() {
+        console.log('Conectado al servidor');
+    });
+
+    socket.on('disconnect', function() {
+        console.log('Perdimos conexión con el servidor');
+    })
+
+    //checkeamos el estado de la cola de tickets para asignar numero de tickets
+
+    socket.on('estadoCola', function(ultimoTicket) {
+        cont = ultimoTicket;
+    })
+</script>
+
+</html>

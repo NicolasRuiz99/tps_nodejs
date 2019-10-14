@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pantalla del publico</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td valign="middle" class="ticket-actual">
+                <span id="lblTicket1" class="ticket-actual-numero">Ticket W</span>
+                <br>
+                <span id="lblEscritorio1" class="ticket-actual-escritorio">Escritorio W</span>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <span id="lblTicket2" class="ticket-secundario">Ticket X</span>
+                            <br>
+                            <span id="lblEscritorio2">Escritorio X</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span id="lblTicket3" class="ticket-secundario">Ticket Y</span>
+                            <br>
+                            <span id="lblEscritorio3">Escritorio Y</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span id="lblTicket4" class="ticket-secundario">Ticket Z</span>
+                            <br>
+                            <span id="lblEscritorio4">Escritorio Z</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script src="socket.io/socket.io.js"></script>
+
+    <script>
+        var socket = io();
+
+        function cargarDatosCelda(colaAtendidos) {
+            if (colaAtendidos.length > 4)
+                colaAtendidos.length = 4;
+            var data;
+            for (let i = 0; i <= 4; i++) {
+                data = colaAtendidos[i];
+                j = i + 1;
+                document.getElementById("lblTicket" + j).innerHTML = "Ticket " + data.nroTicket
+                document.getElementById("lblEscritorio" + j).innerHTML = "Escritorio " + data.nroEsc
+            }
+        }
+
+        function moverDatosCelda(idOrigen, idDestino) {
+            console.log("lblTicket" + idOrigen);
+            document.getElementById("lblTicket" + idDestino).innerHTML = document.getElementById("lblTicket" + idOrigen).innerText
+            document.getElementById("lblEscritorio" + idDestino).innerHTML = document.getElementById("lblEscritorio" + idOrigen).innerText
+        }
+
+        // escuchar 
+        socket.on('connect', function(colaAtendidos) {
+            console.log('Conectado al servidor');
+        });
+
+        socket.on('disconnect', function() {
+            console.log('Perdimos conexión con el servidor');
+        })
+
+        socket.on('buena', function() {
+            console.log("buena");
+
+        })
+
+        socket.on('mostrarNuevoTurno', function(data) {
+            moverDatosCelda("3", "4");
+            moverDatosCelda("2", "3");
+            moverDatosCelda("1", "2");
+            document.getElementById("lblTicket1").innerHTML = "Ticket " + data.nroTicket;
+            document.getElementById("lblEscritorio1").innerHTML = "Escritorio " + data.nroEsc;
+
+        })
+    </script>
+
+</body>
+
+</html>
