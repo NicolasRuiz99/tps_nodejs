@@ -1,7 +1,8 @@
-import React from "react"
+import React,{Fragment} from "react"
 
 const Arma = ({arma, eliminarArma}) => {
     return (
+        <Fragment>
         <div className = "media mt-3">
             <div className="media-body">
                 <h3 className="mt-0">
@@ -22,6 +23,7 @@ const Arma = ({arma, eliminarArma}) => {
                 </button>
             </div>
         </div>
+        </Fragment>
     );
 };
 

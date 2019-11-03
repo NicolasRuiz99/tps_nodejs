@@ -10,8 +10,9 @@ html,body,.container,.row {
 }
 
 .lista-armas .media {
-    border-bottom: 1px solid #e1e1e1;
     padding-bottom: 3rem;
+    display: inline-block;
+    width: 20rem;
 }
 
 .lista-armas .media:last-of-type {
@@ -20,6 +21,7 @@ html,body,.container,.row {
 
 .lista-armas .media-body p {
     margin: 0;
+    max-width: 18rem;
 }
 
 .lista-armas .media-body button {
@@ -32,4 +34,9 @@ html,body,.container,.row {
 
 .col-form-label {
     font-size: 12px;
+}
+
+.titulo {
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
 }
