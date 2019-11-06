@@ -20,7 +20,7 @@ class FormCharts extends Component {
                 <form>
                     <h3>Top Artists / Top Tracks</h3>
                     <div className="input-field col s12 md-col-8">
-                        <select class="browser-default" onChange={this.changeMethod}>
+                        <select className="browser-default" onChange={this.changeMethod}>
                             <option value="gettopartists">Top Artists</option>
                             <option value="gettoptracks">Top Tracks</option>
                         </select>

@@ -14,7 +14,7 @@ class Artists extends Component {
     }
     
     getArtistTops = async (method='gettopalbums',artist='cher') => {
-        const url = `http://ws.audioscrobbler.com/2.0/?method=artist.${method}&artist=${artist}&api_key=1a05309ea26d1f418a36bd513fe259d7&format=json&limit=15&autocorrect=1`;
+        const url = `https://ws.audioscrobbler.com/2.0/?method=artist.${method}&artist=${artist}&api_key=1a05309ea26d1f418a36bd513fe259d7&format=json&limit=15&autocorrect=1`;
         console.log(url);
         
         const resp = await fetch (url);
