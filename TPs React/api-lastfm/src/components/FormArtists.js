@@ -34,7 +34,7 @@ class FormArtists extends Component {
                                     <input placeholder="Enter artist name" value={this.state.artist} type="text" onChange={e => {this.changeArtist(e)}}></input>
                                 </div>
                                 <div className="input-field col s12 md-col-8">
-                                    <select onChange={this.changeMethod}>
+                                    <select class="browser-default" onChange={this.changeMethod}>
                                         <option value="gettopalbums">Top Albums</option>
                                         <option value="gettoptracks">Top Tracks</option>
                                     </select>

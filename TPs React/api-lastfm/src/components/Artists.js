@@ -8,7 +8,7 @@ class Artists extends Component {
         artists: [],
         error: false
     }
-    
+
     componentDidMount () {
         this.getArtistTops ();
     }

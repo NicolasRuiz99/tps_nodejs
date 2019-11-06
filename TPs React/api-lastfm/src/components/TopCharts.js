@@ -6,7 +6,7 @@ class TopCharts extends Component {
     state = {
         charts: []
     }
-    
+
     componentDidMount () {
         this.getTopCharts ();
     }

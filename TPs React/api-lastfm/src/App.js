@@ -10,6 +10,7 @@ function App () {
         <Router>
           <Header/>
             <Switch>
+              <Route exact path="/" component={TopCharts}/>
               <Route exact path="/topCharts" component={TopCharts}/>
               <Route exact path="/artists" component={Artists}/>
             </Switch>

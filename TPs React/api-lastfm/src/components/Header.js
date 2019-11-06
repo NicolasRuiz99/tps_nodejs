@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="nav-wrapper">
-                <Link to="/topCharts" className="brand-logo">
+                <Link to="/" className="brand-logo">
                     API LastFM
                 </Link>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">

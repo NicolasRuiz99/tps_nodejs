@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react';
 
 class FormCharts extends Component {
     state = {
         method:'gettopartists'
     }
 
-    changeMethod = e => {
+    changeMethod = e => {   
         this.setState ({
             method:e.target.value
         },()=>{
@@ -16,17 +16,17 @@ class FormCharts extends Component {
     render() {
         return (
             <div className="row">
-                <div className="col s12 m8 offset-2">
-                    <form>
-                        <h3>Top Artists / Top Tracks</h3>
-                        <div className="input-field col s12 md-col-8">
-                            <select onChange={this.changeMethod}>
-                                <option value="gettopartists">Top Artists</option>
-                                <option value="gettoptracks">Top Tracks</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
+            <div className="col s12 m8 offset-2">
+                <form>
+                    <h3>Top Artists / Top Tracks</h3>
+                    <div className="input-field col s12 md-col-8">
+                        <select class="browser-default" onChange={this.changeMethod}>
+                            <option value="gettopartists">Top Artists</option>
+                            <option value="gettoptracks">Top Tracks</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
             </div>
         )
     }
